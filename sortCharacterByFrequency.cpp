@@ -1,14 +1,14 @@
+#define int long long
 class Solution {
 public:
     string frequencySort(string s) {
-        unordered_map<char , int> h;
-        for(auto i : s)h[i]++;
+        unordered_map<char , int> hash;
+        for(auto i : s)hash[i]++;
        
         priority_queue<pair<int ,char>>pq;
        
-        for(auto i : h){
+        for(auto i : hash)
             pq.push({i.second , i.first});
-        }
         
         string ans;
         while(!pq.empty()){
